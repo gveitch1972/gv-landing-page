@@ -1,0 +1,36 @@
+/* Matrix ON: black background + faint grid */
+body.matrix {
+  background: #000;
+}
+
+/* Let the page wrapper be transparent in Matrix mode
+   so the black background + rain show through */
+body.matrix .app-wrap {
+  background: transparent !important;
+}
+
+/* Subtle animated neon grid overlay */
+body.matrix::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(0deg, rgba(0,255,153,0.06) 0 1px, transparent 1px 80px),
+    repeating-linear-gradient(90deg, rgba(0,255,153,0.06) 0 1px, transparent 1px 80px);
+  animation: matrixGrid 20s linear infinite;
+  opacity: .14;
+  z-index: 0;
+}
+
+@keyframes matrixGrid {
+  0%   { background-position: 0 0, 0 0; }
+  100% { background-position: 0 80px, 80px 0; }
+}
+
+/* Show rain only when Matrix is ON */
+body:not(.matrix) #matrix-canvas { display: none; }
+
+/* Keep app content above overlays/canvas */
+#root { position: relative; z-index: 1; }
+
