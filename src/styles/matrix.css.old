@@ -1,0 +1,81 @@
+/* Global Matrix mode */
+body.matrix {
+  background: #000;
+  color: #00ff99;
+}
+
+/* Subtle animated neon grid overlay */
+body.matrix::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(0deg, rgba(0,255,153,0.06) 0 1px, transparent 1px 80px),
+    repeating-linear-gradient(90deg, rgba(0,255,153,0.06) 0 1px, transparent 1px 80px);
+  animation: matrixGrid 20s linear infinite;
+  opacity: .25;
+  z-index: 0;
+}
+
+@keyframes matrixGrid {
+  0%   { background-position: 0 0, 0 0; }
+  100% { background-position: 0 80px, 80px 0; }
+}
+
+/* Make sure content sits above overlays/canvas */
+#root { position: relative; z-index: 1; }
+
+/* Typography glow */
+body.matrix h1,
+body.matrix h2,
+body.matrix h3,
+body.matrix p,
+body.matrix a,
+body.matrix small,
+body.matrix span {
+  color: #00ff99 !important;
+  text-shadow: 0 0 8px rgba(0,255,153,0.6);
+}
+
+/* Card glass + border override (beats Tailwind bg classes) */
+body.matrix .rounded-3xl {
+  background-color: rgba(0, 24, 12, 0.55) !important;
+  border-color: rgba(0,255,153,0.35) !important;
+  box-shadow: 0 0 25px rgba(0,255,153,0.15) !important;
+  backdrop-filter: blur(8px);
+}
+
+/* Little highlight tiles */
+body.matrix .rounded-xl {
+  background-color: rgba(0, 24, 12, 0.45) !important;
+  border-color: rgba(0,255,153,0.25) !important;
+}
+
+/* Primary CTA button */
+body.matrix a[href^="mailto:"] {
+  background: #001a10 !important;
+  border: 1px solid rgba(0,255,153,0.4) !important;
+  color: #00ff99 !important;
+  box-shadow: 0 0 16px rgba(0,255,153,0.25);
+}
+body.matrix a[href^="mailto:"]:hover {
+  background: #002015 !important;
+}
+
+/* Secondary buttons/links */
+body.matrix a {
+  border-color: rgba(0,255,153,0.35) !important;
+}
+
+/* Lucide icons (stroke) */
+body.matrix svg {
+  filter: drop-shadow(0 0 8px rgba(0,255,153,0.5));
+  stroke: #00ff99;
+}
+
+/* Footer dim */
+body.matrix footer {
+  color: rgba(0,255,153,0.75) !important;
+}
+

@@ -1,10 +1,6 @@
 import React from "react"
 import { motion } from "framer-motion"
 import { Mail, Github, Linkedin } from "lucide-react"
-import MatrixRain from "./components/MatrixRain";
-import TerminalIntro from "./components/TerminalIntro";
-import ThemeToggle from "./components/ThemeToggle";
-
 
 // --- Quick config (edit these) ---------------------------------------------
 const config = {
@@ -12,8 +8,9 @@ const config = {
   tagline: "Senior Software & Automation Engineer",
   subTagline: "Platform reliability • CI/CD • Workload automation",
   photoUrl: "", // ← paste a photo URL (https://...) OR leave blank to use avatar
-  email: "grahamcveitch@gmail.com",
+  email: "graham@grahamveitch.com",
   linkedin: "https://www.linkedin.com/in/grahamveitch",
+  github: "https://github.com/", // add your GitHub
   ctaText: "Get in touch", // button text
 }
 // ---------------------------------------------------------------------------
@@ -51,11 +48,7 @@ function Avatar({ name, photoUrl }) {
 
 export default function LandingPage() {
   return (
-    <>
-      	<MatrixRain />
-	<TerminalIntro />
-	<ThemeToggle />
-      <div className="app-wrap w-screen min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100 px-4 relative z-10">
+    <div className="w-screen min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100 px-4">
       <main className="relative w-full max-w-lg mx-auto px-6 py-20">
         <motion.section
           initial={{ opacity: 0, y: 20 }}
@@ -82,6 +75,16 @@ export default function LandingPage() {
                 >
                   <Mail className="mr-2 h-4 w-4" /> {config.ctaText}
                 </a>
+                {config.github && (
+                  <a
+                    href={config.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center rounded-2xl border border-slate-300 bg-white px-4 py-2 text-slate-700 shadow-sm hover:bg-slate-50"
+                  >
+                    <Github className="mr-2 h-4 w-4" /> GitHub
+                  </a>
+                )}
                 {config.linkedin && (
                   <a
                     href={config.linkedin}
@@ -124,7 +127,6 @@ export default function LandingPage() {
         </motion.footer>
       </main>
     </div>
-    </>
   )
 }
 
