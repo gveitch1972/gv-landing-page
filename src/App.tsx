@@ -1,9 +1,9 @@
-import React from "react"
 import { motion } from "framer-motion"
-import { Mail, Github, Linkedin } from "lucide-react"
+import { Mail, Linkedin } from "lucide-react"
 import MatrixRain from "./components/MatrixRain";
 import TerminalIntro from "./components/TerminalIntro";
 import ThemeToggle from "./components/ThemeToggle";
+
 
 
 // --- Quick config (edit these) ---------------------------------------------
@@ -18,7 +18,7 @@ const config = {
 }
 // ---------------------------------------------------------------------------
 
-function Avatar({ name, photoUrl }) {
+function Avatar({ name, photoUrl }: { name: string; photoUrl?: string }) {
   // If a photo is defined, use it
   if (photoUrl) {
     return (
