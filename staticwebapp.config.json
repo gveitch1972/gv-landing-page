@@ -1,20 +1,18 @@
 {
+  "mimeTypes": {
+    ".js": "text/javascript",
+    ".mjs": "text/javascript",
+    ".cjs": "text/javascript",
+    ".json": "application/json",
+    ".css": "text/css",
+    ".map": "application/json"
+  },
   "navigationFallback": {
     "rewrite": "/index.html",
     "exclude": [
       "/assets/*",
-      "/*.css",
-      "/*.js",
-      "/*.png",
-      "/*.jpg",
-      "/*.svg",
       "/favicon.ico"
     ]
-  },
-  "mimeTypes": {
-    ".js": "text/javascript",
-    ".mjs": "text/javascript",
-    ".css": "text/css"
   }
 }
 
