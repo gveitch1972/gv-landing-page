@@ -34,3 +34,20 @@ body:not(.matrix) #matrix-canvas { display: none; }
 /* Keep app content above overlays/canvas */
 #root { position: relative; z-index: 1; }
 
+/* Only glow when Matrix mode is ON */
+body.matrix .skill-card {
+  position: relative;
+  animation: skillGlow 3s ease-in-out infinite;
+}
+
+@keyframes skillGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 rgba(16,185,129,0);
+    border-color: rgba(16,185,129,0.4);
+  }
+  50% {
+    box-shadow: 0 0 18px rgba(16,185,129,0.9);
+    border-color: rgba(16,185,129,0.9);
+  }
+}
+

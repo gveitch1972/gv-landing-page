@@ -98,30 +98,24 @@ export default function LandingPage() {
               </div>
 
 
-{/* Highlights strip */}
+{/* Highlights strip – simple, glowing cards */}
 <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
   {[
     "Technical Integration & Vendor Success Management",
     "Enterprise Workload Automation",
     "Platform Reliability, Incident, Change & Governance",
-    "Agile, CI/CD & Release",
-    "Scripting & Programming",
-    "Regulated Environments",
-    "Agile Delivery & Cross-Team Collaboration",
-    "Enterprise Batch Scheduling & Job Orchestration",
-    "Hidden Skill 1",
-    "Hidden Skill 2",
-  ]
-    .slice(0, 3)
-    .map((item) => (
-      <div
-        key={item}
-        className="rounded-xl border border-slate-200/70 bg-white px-4 py-3 text-sm text-slate-700 shadow-sm flex justify-center text-center"
-      >
-        {item}
-      </div>
-    ))}
+  ].map((item, i) => (
+    <div
+      key={item}
+      className="skill-card rounded-xl border border-emerald-400/40 bg-white px-4 py-3 text-sm text-slate-800 shadow-sm flex justify-center text-center"
+      style={{ animationDelay: `${i * 0.6}s` }} // stagger the glow
+    >
+      {item}
+    </div>
+  ))}
 </div>
+
+
             </div>
           </div>
         </motion.section>
