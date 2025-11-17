@@ -27,28 +27,30 @@ function Avatar({ name, photoUrl }: { name: string; photoUrl?: string }) {
       <img
         src={photoUrl}
         alt={`${name} headshot`}
-        className="h-24 w-24 rounded-full object-cover ring-4 ring-white/70 shadow-xl"
+        className="h-18 w-18 rounded-full object-cover ring-4 ring-white/70 shadow-xl"
       />
     )
   }
 
-  // Futurist illustrated avatar
-  return (
-    <div className="h-24 w-24 rounded-full bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] grid place-items-center ring-4 ring-cyan-300/70 shadow-[0_0_25px_rgba(56,189,248,0.5)] animate-[pulse_3s_ease-in-out_infinite]">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="#67e8f9"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="h-20 w-20 drop-shadow-[0_0_10px_#22d3ee]"
-      >
-        <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.2c-3.2 0-9.9 1.6-9.9 4.9v2.7h19.8v-2.7c0-3.3-6.7-4.9-9.9-4.9z" />
-      </svg>
-    </div>
-  )
+// Futurist illustrated avatar
+return (
+  <div className="h-20 w-20 rounded-full bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] grid place-items-center ring-4 ring-cyan-300/70 shadow-[0_0_25px_rgba(56,189,248,0.5)] animate-[pulse_3s_ease-in-out_infinite]">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#67e8f9"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="h-10 w-10 drop-shadow-[0_0_10px_#22d3ee]"
+    >
+      <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.2c-3.2 0-9.9 1.6-9.9 4.9v2.7h19.8v-2.7c0-3.3-6.7-4.9-9.9-4.9z" />
+    </svg>
+  </div>
+);
+
+
 }
 
 export default function LandingPage() {
@@ -57,7 +59,7 @@ export default function LandingPage() {
       	<MatrixRain />
 	<TerminalIntro />
 	<ThemeToggle />
-      <div className="app-wrap w-screen min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-1000 px-4 relative z-10">
+      <div className="app-wrap w-screen min-h-screen flex items-center -mt-10 justify-center bg-gradient-to-br from-slate-50 to-slate-1000 px-4 relative z-10">
       <main className="relative w-full max-w-lg mx-auto px-4 py-20">
         <motion.section
           initial={{ opacity: 0, y: 20 }}
@@ -66,18 +68,18 @@ export default function LandingPage() {
           className="w-full"
         >
           <div className="mx-auto w-full rounded-3xl border border-slate-300/60 bg-white/90 p-8 shadow-xl backdrop-blur-lg">
-            <div className="flex flex-col items-center gap-6 text-center">
+            <div className="flex flex-col items-center gap-4 text-center">
               <Avatar name={config.name} photoUrl={config.photoUrl} />
 
               <div>
-                <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-slate-900">
+                <h1 className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900">
                   {config.name}
                 </h1>
-                <p className="mt-2 text-lg text-slate-700">{config.tagline}</p>
+                <p className="mt-1 text-lg text-slate-700">{config.tagline}</p>
                 <p className="mt-1 text-sm text-slate-500">{config.subTagline}</p>
               </div>
 
-              <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
+              <div className="mt-1 flex flex-wrap items-center justify-center gap-1">
                 <a
                   href={`mailto:${config.email}`}
                   className="inline-flex items-center rounded-2xl bg-slate-900 px-6 py-3 text-white shadow hover:bg-slate-800"
@@ -89,7 +91,7 @@ export default function LandingPage() {
   			href="www.linkedin.com/in/grahamveitch"
   			target="_blank"
   			rel="noopener noreferrer"
-  			className="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 text-black hover:bg-gray-100 transition"
+  			className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl border border-gray-300 text-black hover:bg-gray-100 transition"
 		>
   			<FaLinkedin className="w-4 h-4 text-[#0A66C2]" aria-hidden="true" />
   			<span>LinkedIn</span>
@@ -99,10 +101,10 @@ export default function LandingPage() {
 
 
 {/* Highlights strip – simple, glowing cards */}
-<div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+<div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
   {[
     "Technical Integration & Vendor Success Management",
-    "Enterprise Workload Automation",
+    "Workload Automation, Orchestration & Agile Operational Efficiency",
     "Platform Reliability, Incident, Change & Governance",
   ].map((item, i) => (
     <div
@@ -127,7 +129,7 @@ export default function LandingPage() {
           transition={{ delay: 0.4, duration: 0.6 }}
           className="mt-10 text-left text-base text-slate-800"
         >
-          © {new Date().getFullYear()} {config.name}. All rights reserved. Well apart from the Matrix stuff, some movie in the 90's lol.
+          © {new Date().getFullYear()} {config.name}. All rights reserved. Well apart from the Matrix stuff, some movie in the 90's ;-)
         </motion.footer>
       </main>
     </div>
