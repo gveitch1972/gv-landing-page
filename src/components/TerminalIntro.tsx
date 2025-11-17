@@ -5,7 +5,6 @@ const LINES = [
   "> initializing handshake……",
   "> probing reality layers……",
   "> Thinking……",
-  "> Thinking……",
   "> wake up, Neo.",
 ];
 

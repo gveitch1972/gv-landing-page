@@ -59,7 +59,7 @@ export default function LandingPage() {
       	<MatrixRain />
 	<TerminalIntro />
 	<ThemeToggle />
-      <div className="app-wrap w-screen min-h-screen flex items-center -mt-10 justify-center bg-gradient-to-br from-slate-50 to-slate-1000 px-4 relative z-10">
+      <div className="app-wrap w-screen min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-1000 px-4 relative z-10">
       <main className="relative w-full max-w-lg mx-auto px-4 py-20">
         <motion.section
           initial={{ opacity: 0, y: 20 }}
