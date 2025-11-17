@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const LINES = [
-  "> initializing handshake…",
-  "> probing reality layers…",
-  "> Thinking.....…",
+  "> initializing handshake……",
+  "> probing reality layers……",
+  "> Thinking……",
+  "> Thinking……",
   "> wake up, Neo.",
 ];
 
@@ -16,10 +17,10 @@ export default function TerminalIntro() {
   useEffect(() => {
     if (!visible) return;
     if (lineIndex >= LINES.length) {
-      const t = setTimeout(() => setVisible(false), 700);
+      const t = setTimeout(() => setVisible(false), 2500);
       return () => clearTimeout(t);
     }
-    const t = setTimeout(() => setLineIndex((i) => i + 1), 1000);
+    const t = setTimeout(() => setLineIndex((i) => i + 1), 1200);
     return () => clearTimeout(t);
   }, [lineIndex, visible]);
 

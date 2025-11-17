@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
-import { Mail, Linkedin } from "lucide-react"
+import { Mail } from "lucide-react"
+import { FaLinkedin } from "react-icons/fa";
 import MatrixRain from "./components/MatrixRain";
 import TerminalIntro from "./components/TerminalIntro";
 import ThemeToggle from "./components/ThemeToggle";
@@ -10,7 +11,8 @@ import ThemeToggle from "./components/ThemeToggle";
 const config = {
   name: "Graham Veitch",
   tagline: "Senior Software & Automation Engineer",
-  subTagline: "Platform reliability • CI/CD • Workload automation",
+  subTagline: "Tech-Agnostic Digital Disruptor | Blending Critical Thinking, Collaboration, Communication, Creativity & Imagination to shape what’s next…",
+  //subTagline: "Platform reliability • CI/CD • Workload automation",
   photoUrl: "", // ← paste a photo URL (https://...) OR leave blank to use avatar
   email: "grahamcveitch@gmail.com",
   linkedin: "https://www.linkedin.com/in/grahamveitch",
@@ -55,8 +57,8 @@ export default function LandingPage() {
       	<MatrixRain />
 	<TerminalIntro />
 	<ThemeToggle />
-      <div className="app-wrap w-screen min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100 px-4 relative z-10">
-      <main className="relative w-full max-w-lg mx-auto px-6 py-20">
+      <div className="app-wrap w-screen min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-1000 px-4 relative z-10">
+      <main className="relative w-full max-w-lg mx-auto px-4 py-20">
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -83,32 +85,43 @@ export default function LandingPage() {
                   <Mail className="mr-2 h-4 w-4" /> {config.ctaText}
                 </a>
                 {config.linkedin && (
-                  <a
-                    href={config.linkedin}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center rounded-2xl border border-slate-300 bg-white px-4 py-2 text-slate-700 shadow-sm hover:bg-slate-50"
-                  >
-                    <Linkedin className="mr-2 h-4 w-4" /> LinkedIn
-                  </a>
+		<a
+  			href="www.linkedin.com/in/grahamveitch"
+  			target="_blank"
+  			rel="noopener noreferrer"
+  			className="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 text-black hover:bg-gray-100 transition"
+		>
+  			<FaLinkedin className="w-4 h-4 text-[#0A66C2]" aria-hidden="true" />
+  			<span>LinkedIn</span>
+		</a>
                 )}
               </div>
 
-              {/* Highlights strip */}
-              <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                {[
-                  "Workload Automation",
-                  "CI/CD & Release",
-                  "Regulated Environments",
-                ].map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-xl border border-slate-200/70 bg-white p-4 text-sm text-slate-700 shadow-sm"
-                  >
-                    {item}
-                  </div>
-                ))}
-              </div>
+
+{/* Highlights strip */}
+<div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+  {[
+    "Technical Integration & Vendor Success Management",
+    "Enterprise Workload Automation",
+    "Platform Reliability, Incident, Change & Governance",
+    "Agile, CI/CD & Release",
+    "Scripting & Programming",
+    "Regulated Environments",
+    "Agile Delivery & Cross-Team Collaboration",
+    "Enterprise Batch Scheduling & Job Orchestration",
+    "Hidden Skill 1",
+    "Hidden Skill 2",
+  ]
+    .slice(0, 3)
+    .map((item) => (
+      <div
+        key={item}
+        className="rounded-xl border border-slate-200/70 bg-white px-4 py-3 text-sm text-slate-700 shadow-sm flex justify-center text-center"
+      >
+        {item}
+      </div>
+    ))}
+</div>
             </div>
           </div>
         </motion.section>
@@ -118,9 +131,9 @@ export default function LandingPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="mt-10 text-center text-xs text-slate-500"
+          className="mt-10 text-left text-base text-slate-800"
         >
-          © {new Date().getFullYear()} {config.name}. All rights reserved.
+          © {new Date().getFullYear()} {config.name}. All rights reserved. Well apart from the Matrix stuff, some movie in the 90's lol.
         </motion.footer>
       </main>
     </div>
