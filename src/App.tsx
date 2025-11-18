@@ -86,17 +86,17 @@ export default function LandingPage() {
                 >
                   <Mail className="mr-2 h-4 w-4" /> {config.ctaText}
                 </a>
-                {config.linkedin && (
-		<a
-  			href="www.linkedin.com/in/grahamveitch"
-  			target="_blank"
-  			rel="noopener noreferrer"
-  			className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl border border-gray-300 text-black hover:bg-gray-100 transition"
-		>
-  			<FaLinkedin className="w-4 h-4 text-[#0A66C2]" aria-hidden="true" />
-  			<span>LinkedIn</span>
-		</a>
-                )}
+{config.linkedin && (
+  <a
+    href={config.linkedin}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl border border-gray-300 text-black hover:bg-gray-100 transition"
+  >
+    <FaLinkedin className="w-4 h-4 text-[#0A66C2]" aria-hidden="true" />
+    <span>LinkedIn</span>
+  </a>
+)}
               </div>
 
 
