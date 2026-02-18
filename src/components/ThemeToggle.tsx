@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export default function ThemeToggle() {
-    const [matrix, setMatrix] = useState(true); // start ON
+    const [matrix, setMatrix] = useState(false); // start ON
 
   useEffect(() => {
     document.body.classList.toggle("matrix", matrix);

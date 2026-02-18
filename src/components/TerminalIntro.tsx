@@ -16,10 +16,10 @@ export default function TerminalIntro() {
   useEffect(() => {
     if (!visible) return;
     if (lineIndex >= LINES.length) {
-      const t = setTimeout(() => setVisible(false), 2500);
+      const t = setTimeout(() => setVisible(false), 1200);
       return () => clearTimeout(t);
     }
-    const t = setTimeout(() => setLineIndex((i) => i + 1), 1200);
+    const t = setTimeout(() => setLineIndex((i) => i + 1), 600);
     return () => clearTimeout(t);
   }, [lineIndex, visible]);
 
